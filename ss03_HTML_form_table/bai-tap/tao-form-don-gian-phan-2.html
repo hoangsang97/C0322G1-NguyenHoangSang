@@ -6,26 +6,51 @@
 </head>
 <body>
 <form action="">
-  <h3>
-    ĐĂNG KÍ HỌC VIÊN
-  </h3>
-  <label for="fname">Họ và tên </label>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Ngày sinh </label>
-  <input type="text" id="lname" name="lname"><br>
-  <span>Giới tính </span>
-  <input type="radio"><span>Nam</span>
-  <input type="radio"><span>Nữ</span><br>
-  <span>Địa chỉ</span>
-  <textarea name="" cols="30" rows="5"></textarea><br>
-  <span>Lớp</span>
-  <select name="city">
-    <option value="cl">--Chọn lớp--</option>
-  </select><br>
-  <span>Email</span> <input type="text"><br>
-  <span>Điện thoại</span> <input type="text"><br>
-  <input type = "button" name="btSubmit" value="Đăng kí"/>
-  <input type = "reset" name="btreset" value="Nhập lại"/>
+  <h3>ĐĂNG KÍ HỌC VIÊN</h3>
+  <table>
+    <tr>
+      <td><label for="fname">Họ và tên </label></td>
+      <td><input type="text" id="fname" name="fname"></td>
+    </tr>
+    <tr>
+      <td><label for="lname">Ngày sinh </label></td>
+      <td><input type="text" id="lname" name="lname"></td>
+    </tr>
+    <tr>
+      <td><span>Giới tính </span></td>
+      <td>
+        <input name="gender" type="radio"><span>Nam</span>
+        <input name="gender" type="radio"><span>Nữ</span>
+      </td>
+    </tr>
+    <tr>
+      <td><span>Địa chỉ</span></td>
+      <td><textarea name="" cols="30" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <td><span>Lớp</span></td>
+      <td>
+        <select name="city">
+          <option value="cl">--Chọn lớp--</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><span>Email</span></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><span>Điện thoại</span> </td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type = "button" name="btSubmit" value="Đăng kí"/>
+        <input type = "reset" name="btreset" value="Nhập lại"/>
+      </td>
+    </tr>
+  </table>
 </form>
 </body>
 <style>

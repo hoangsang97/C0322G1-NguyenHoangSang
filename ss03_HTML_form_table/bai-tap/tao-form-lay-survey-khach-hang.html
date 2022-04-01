@@ -152,7 +152,7 @@
           Please rate your level of agreement with the following statements.
         </caption>
         <thead>
-        <tr>
+        <tr style="background-color: #dddddd;">
           <th>&nbsp;</th>
           <td>Strongly Disagree</td>
           <td>Disagree</td>
@@ -244,6 +244,16 @@
   }
   li {
     list-style-type: none;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
   }
 </style>
 </html>
