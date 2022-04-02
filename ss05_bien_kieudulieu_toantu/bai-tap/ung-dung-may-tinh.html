@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May tinh</title>
+</head>
+<body>
+  <form action="">
+    <input type="number" id="nb1">
+    <input type="number" id="nb2" style="margin-bottom: 10px"><br>
+    <input type="button" onclick="addtion()" value="Addtion(+)">
+    <input type="button" onclick="Subtraction()" value="Subtraction(-)">
+    <input type="button" onclick="Multiplication()" value="Multiplication(*)">
+    <input type="button" onclick="Division()" value="Division(/)">
+  </form>
+  <span>Result Division :</span><span id="kq"></span>
+</body>
+</html>
+<script>
+  function addtion() {
+    let nb1 = document.getElementById('nb1').value;
+    let nb2 = document.getElementById('nb2').value;
+    nb1 = parseInt(nb1);
+    nb2 = parseInt(nb2);
+   let tong = nb1 + nb2;
+   document.getElementById('kq').innerHTML=' ' + tong;
+  }
+  function Subtraction() {
+    let nb1 = document.getElementById('nb1').value;
+    let nb2 = document.getElementById('nb2').value;
+    nb1 = parseInt(nb1);
+    nb2 = parseInt(nb2);
+    let tong = nb1 - nb2;
+    document.getElementById('kq').innerHTML=' ' + tong;
+  }
+  function Multiplication() {
+    let nb1 = document.getElementById('nb1').value;
+    let nb2 = document.getElementById('nb2').value;
+    nb1 = parseInt(nb1);
+    nb2 = parseInt(nb2);
+    let tong = nb1 * nb2;
+    document.getElementById('kq').innerHTML=' ' + tong;
+  }
+  function Division() {
+    let nb1 = document.getElementById('nb1').value;
+    let nb2 = document.getElementById('nb2').value;
+    nb1 = parseInt(nb1);
+    nb2 = parseInt(nb2);
+    let tong = nb1 / nb2;
+    document.getElementById('kq').innerHTML=' ' + tong;
+  }
+</script>
