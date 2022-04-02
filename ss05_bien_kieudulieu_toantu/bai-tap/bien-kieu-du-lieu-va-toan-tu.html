@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai Tap</title>
+</head>
+<body>
+<script>
+  let inputvatly = prompt('Nhập điểm môn vật lý: ');
+  let inputhoahoc = prompt('Nhập điểm môn hoá học: ');
+  let inputsinhhoc = prompt('Nhập điểm môn sinh học: ');
+
+  let vatly = parseInt(inputvatly);
+  let hoahoc = parseInt(inputhoahoc);
+  let sinhhoc = parseInt(inputsinhhoc);
+
+  let total = vatly + hoahoc + sinhhoc;
+  document.write('Tổng điểm của 3 môn là: ' + total);
+  document.write('<br>');
+  let average = total / 3 ;
+  document.write('Điểm trung bình 3 môn là: ' + average);
+  document.write('<br>');
+
+  let inputc = prompt('Nhập giá trị độ C: ');
+  let F = (9 * inputc) / 5 + 32;
+  document.write('Giá trị của độ F là: ' + F);
+  document.write('<br>');
+
+  let inputR = prompt('Nhập bán kính hình tròn R: ');
+  let S = inputR * inputR * 3.14;
+  let C = 2 * inputR * 3.14;
+
+  document.write('Diện tích hình tròn là: ' + S);
+  document.write('<br>');
+  document.write('Chu vi hình tròn là: ' + C);
+</script>
+</body>
+</html>
