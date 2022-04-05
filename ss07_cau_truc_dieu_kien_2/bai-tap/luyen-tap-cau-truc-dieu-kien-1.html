@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+<script>
+//Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không
+  let a = parseInt(prompt('Nhập số a: '));
+  let b = parseInt(prompt('Nhập số b: '));
+  if (a % b == 0) {
+    alert('a chia hết cho b');
+  } else {
+    alert('a không chia hết cho b');
+  }
+
+//Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.
+  let age = parseInt(prompt('Nhập tuổi: '));
+  if (age >= 15) {
+    alert('Bạn được vào lớp 10');
+  } else {
+    alert('Bạn không được vào lớp 10');
+  }
+
+//Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+  let interG = parseInt(prompt('Nhập một số bất kì: '));
+  if (interG >= 0) {
+    alert ('Là một số nguyên dương');
+  } else {
+    alert('là một số nguyên âm');
+  }
+
+//Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+  let c = parseInt(prompt('Nhâp số thứ nhất: '));
+  let d = parseInt(prompt('Nhập số thứ hai: '));
+  let e = parseInt(prompt('Nhập số thứ ba: '));
+  if (c > d && c > e) {
+    alert(c);
+  } else if (d > e && d >c) {
+    alert(d);
+  } else {
+    alert(e);
+  }
+
+//Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+  let midtermScore = parseInt(prompt('Nhập điểm giữa kỳ'));
+  let finalGrade = parseInt(prompt('Nhập điểm cuối kỳ: '));
+  let medium = (finalGrade + midtermScore ) / 2;
+  if (medium >= 8) {
+    alert('xếp loại giỏi');
+  } else if (medium < 8 && medium >= 5) {
+    alert('xếp loại trung bình');
+  } else {
+    alert('xếp loại yếu');
+  }
+
+//Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+  let revenue = parseInt(prompt('Doanh thu bán hàng: '));
+  let commission = parseInt(prompt('phần trăm hoa hồng có thể nhận: '))
+  let result = revenue * commission / 100;
+  alert(result);
+
+//Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+//Phí thuê bao bắt buộc là 25 nghìn.
+//600 đồng cho mỗi gọi của 50 phút đầu tiên.
+//400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+//200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+  let inputMinute = parseInt(prompt('Nhập số phút đã sử dụng: '));
+  const CALLCHARGES = 25000;
+  if (inputMinute <= 50) {
+    let result = CALLCHARGES + 600 * inputMinute;
+    alert(result);
+  } else if (inputMinute > 50 && inputMinute < 200) {
+    let result = CALLCHARGES + 600 * 50 + 400 * (inputMinute % 50);
+    alert(result);
+  } else if (inputMinute > 200) {
+    let result = inputMinute + 600 * 50 + 400 * 150 + 200 * (inputMinute % 200);
+    alert(result);
+  } else {
+    alert(CALLCHARGES);
+  }
+</script>
+</body>
+</html>
