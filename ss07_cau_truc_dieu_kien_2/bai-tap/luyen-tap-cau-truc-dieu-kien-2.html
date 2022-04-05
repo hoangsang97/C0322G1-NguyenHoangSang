@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen cau truc dieu kien 2</title>
+</head>
+<body>
+<script>
+//Bài 1: Chuyển từ độ C sang độ F.
+    let C = parseInt(prompt('Nhập độ C: '));
+    let F = C * (9/5) + 32;
+    alert(F);
+
+//Bài 2: Chuyển từ mét sang feet:
+    let m = parseInt(prompt('Nhập số mét: '));
+    let ft = m * 3.2808;
+    alert(ft);
+
+//Bài 3: Tính diện tích hình vuông khi biết cạnh a.
+    let a = parseInt(prompt('Nhập cạnh a: '));
+    let S = a * a;
+    alert(S);
+
+//Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+    let cd = parseInt(prompt('Nhập chiều dài: '));
+    let cr = parseInt(prompt('Nhập chiều rộng: '));
+    let Scn = cd * cr;
+    alert(Scn);
+
+//Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+    let cdTg = parseInt(prompt('Nhập chiều dài: '));
+    let crTg = parseInt(prompt('Nhập chiều rộng: '));
+    let STg = 1/2 * (cdTg * crTg);
+    alert(STg);
+
+//Bài 6: Giải phương trình bậc 1.
+    let aPt1 = parseInt(prompt('Nhập số a: '));
+    let bPt1 = parseInt(prompt('Nhập số b: '));
+    let resultPt1 = - (bPt1 / aPt1);
+    alert(resultPt1);
+
+//Bài 7: Giải phương trình bậc 2.
+    let aPt2 = parseInt(prompt('Nhập số a: '));
+    let bPt2 = parseInt(prompt('Nhập số b: '));
+    let cPt2 = parseInt(prompt('Nhập số c: '));
+    let resultPt2 = (bPt2 * bPt2) - (4 * aPt2 * cPt2);
+    if  (resultPt2 > 0) {
+        let x1 = (-bPt2 + Math.sqrt(resultPt2)) / (2 * aPt2);
+        let x2 = (-bPt2 - Math.sqrt(resultPt2)) / (2 * aPt2);
+        alert ('Phương trình có 2 ngiệm: ' + ' ' + x1 + ' , ' + x2);
+    } else if (resultPt2 == 0) {
+        let x = -b / ( 2 * aPt2);
+        alert('Phương trình có nghiệm kép: ' + x);
+    } else {
+        alert('Phương trình vô nghiệm');
+    }
+
+//Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    let age = parseInt(prompt('Nhập tuổi: '));
+    if  (age > 120 || age < 0) {
+        alert('Error');
+    } else {
+        alert('tuổi của bạn là : ' + age);
+    }
+
+//Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+    let edgeA = parseInt(prompt('Nhập cạnh a: '));
+    let edgeB = parseInt(prompt('Nhập cạnh b: '));
+    let edgeC = parseInt(prompt('Nhập cạnh c: '));
+    let reviewA = (edgeA + edgeB) > edgeC;
+    let reviewB = (edgeB + edgeC) > edgeA;
+    let reviewC = (edgeA + edgeC) > edgeB;
+
+    if (reviewA && reviewB && reviewC > 0) {
+        if  (reviewA || reviewB || reviewC ) {
+            alert('Cạnh a là: ' + edgeA);
+            alert('Cạnh b là: ' + edgeB);
+            alert('Cạnh c là: ' + edgeC);
+        } else {
+            alert('Không phải là cạnh của tam giác');
+        }
+    } else {
+        alert('Không phải là cạnh của tam giác');
+    }
+
+//Bài 10: Viết chương trình tính giá điện.
+    let electricity = parseInt(prompt('Số kWh điện dùng trong 1 tháng: '));
+    if  (electricity > 50 ) {
+        let resultElec = electricity * 1448;
+        alert(resultElec);
+    } else if (electricity >= 51 && electricity < 100) {
+        let resultElec = electricity * 1533;
+        alert(resultElec);
+    } else if (electricity >= 101 && electricity < 200) {
+        let resultElec = electricity * 1786;
+        alert(resultElec);
+    } else {
+        let resultElec = electricity * 2242;
+        alert(resultElec);
+    }
+
+//Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+//Bậc 1: 4 triệu đồng/tháng 0%;
+//Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;
+//Bậc 3: Trên 6 - 9 triệu đồng: 10%;
+//Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;
+//Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;
+//Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;
+//Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;
+//Bậc 8: Trên 84 triệu đồng: 35%.
+    let wage = parseInt(prompt('Nhập lương thu nhập cá nhân mỗi tháng: '))
+    if (wage > 84000000) {
+        let personalTax = (wage * 35) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else if (wage > 4000000 && wage <= 6000000) {
+        let personalTax = (wage * 5) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else if (wage > 6000000 && wage <= 9000000) {
+        let personalTax = (wage * 10) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else if (wage > 9000000 && wage <= 14000000) {
+        let personalTax = (wage * 15) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else if (wage > 14000000 && wage <= 24000000) {
+        let personalTax = (wage * 20) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else if (wage > 24000000 && wage <= 44000000) {
+        let personalTax = (wage * 25) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else if (wage > 44000000 && wage <= 84000000) {
+        let personalTax = (wage * 30) / 100;
+        alert('Thuế thu nhập là : ' + personalTax);
+    } else {
+        alert('Không có thuế');
+    }
+
+//Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+    let moneyBank = parseInt(prompt('Nhập số tiền gửi ngân hàng: '));
+    let daySend = parseInt(prompt('Nhập số ngày gửi tiền: '));
+    let moneyInterest = (moneyBank * 3) /100 * (daySend / 360);
+    alert('Số tiền lãi được là: ' + moneyInterest);
+</script>
+</body>
+</html>
