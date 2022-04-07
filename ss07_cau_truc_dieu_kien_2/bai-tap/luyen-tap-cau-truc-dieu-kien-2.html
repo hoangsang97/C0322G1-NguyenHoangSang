@@ -71,7 +71,7 @@
     let reviewB = (edgeB + edgeC) > edgeA;
     let reviewC = (edgeA + edgeC) > edgeB;
 
-    if (reviewA && reviewB && reviewC > 0) {
+    if (reviewA > 0  && reviewB > 0 && reviewC > 0) {
         if  (reviewA || reviewB || reviewC ) {
             alert('Cạnh a là: ' + edgeA);
             alert('Cạnh b là: ' + edgeB);
@@ -85,13 +85,13 @@
 
 //Bài 10: Viết chương trình tính giá điện.
     let electricity = parseInt(prompt('Số kWh điện dùng trong 1 tháng: '));
-    if  (electricity > 50 ) {
+    if  (electricity < 50 ) {
         let resultElec = electricity * 1448;
         alert(resultElec);
-    } else if (electricity >= 51 && electricity < 100) {
+    } else if (electricity < 100) {
         let resultElec = electricity * 1533;
         alert(resultElec);
-    } else if (electricity >= 101 && electricity < 200) {
+    } else if (electricity < 200) {
         let resultElec = electricity * 1786;
         alert(resultElec);
     } else {

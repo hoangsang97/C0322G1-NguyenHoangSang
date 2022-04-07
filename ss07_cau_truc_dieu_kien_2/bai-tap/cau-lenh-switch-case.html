@@ -8,15 +8,15 @@
 <form action="">
   <label for="month"></label>
   <input id="month" type="number">
-  <input type="button" value="Tính số ngày" onclick="result()"><br>
+  <input type="button" value="Date count" onclick="result()"><br>
   <b id="txtResult"></b>
 </form>
 </body>
 </html>
 <script>
   function result() {
-    let inputMonth = document.getElementById('month').value;
-    switch (parseInt(inputMonth)) {
+    let inputMonth = parseInt(document.getElementById('month').value);
+    switch (inputMonth) {
       case 1:
       case 3:
       case 5:

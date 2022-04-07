@@ -49,7 +49,7 @@
   let medium = (finalGrade + midtermScore ) / 2;
   if (medium >= 8) {
     alert('xếp loại giỏi');
-  } else if (medium < 8 && medium >= 5) {
+  } else if (medium >= 5) {
     alert('xếp loại trung bình');
   } else {
     alert('xếp loại yếu');
@@ -71,7 +71,7 @@
   if (inputMinute <= 50) {
     let result = CALLCHARGES + 600 * inputMinute;
     alert(result);
-  } else if (inputMinute > 50 && inputMinute < 200) {
+  } else if (inputMinute < 200) {
     let result = CALLCHARGES + 600 * 50 + 400 * (inputMinute % 50);
     alert(result);
   } else if (inputMinute > 200) {
