@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bang cuu chuong</title>
+</head>
+<body>
+<script>
+  let state;
+  state = '<table border="1" width="1000" cellpadding="1" cellspacing="1">';
+  for (i = 2; i < 10; i++) {
+      state = state + '<tr>';
+      for (j = 1; j < 10; j++) {
+          state = state + '<td>' + i + 'x' + j + '=' + i * j + '</td>';
+      }
+      state = state + '<tr>';
+  }
+  state = state + '</table>';
+  document.write(state);
+</script>
+</body>
+</html>
