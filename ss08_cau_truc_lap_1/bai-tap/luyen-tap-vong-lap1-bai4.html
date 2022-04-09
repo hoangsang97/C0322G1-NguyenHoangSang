@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+  let n1 = 0;
+  let n2 = 1;
+  let nextTerm;
+  let flag = true;
+
+  document.write('Fibonacci Series: ' + '<br>');
+
+  for (let i = 1; i <= 20; i++) {
+      nextTerm = n1 + n2;
+      n1 = n2;
+      n2 = nextTerm;
+      if (n1 % 5 === 0) {
+          flag = true;
+          break;
+      }
+  }
+
+  if (flag === true ) {
+      document.write(n1 + " là số đầu tiên chia hết cho 5 <br/>");
+  }
+
+</script>
+</body>
+</html>
