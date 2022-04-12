@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+    let arrayA = [11, 5, 3, 12, 7, 20, 30, 40, 33, 4];
+    let max = arrayA[0];
+    let max_index;
+    let total = 0;
+    for (let i = 0; i < arrayA.length; i++) {
+        if (max < arrayA[i]) {
+            max = arrayA[i];
+            max_index = i;
+        }
+        total = total + arrayA[i];
+    }
+    let medium = total / (max_index + 1);
+    document.write('số nguyên lớn nhất là: ' + max + '<br>' + 'tại vị trí: ' + max_index + '<br>');
+    document.write('giá trị trung bình các phần tử trong mảng: ' + medium);
+</script>
+</body>
+</html>
