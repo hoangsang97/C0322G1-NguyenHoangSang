@@ -8,33 +8,26 @@
 <script>
     let numbers = parseInt(prompt('Nhập số nguyên tố cần in ra: '));
     let count = 0;
-    while (count < numbers) {
-        let n = count;
+    let n = 4;
+    document.write(2 + " là số nguyên tố <br/>");
+    document.write(3 + " là số nguyên tố <br/>");
+    while (count < numbers - 2) {
         let flag = true;
-        if (n < 2){
+        if (n % 2 === 0) {
             flag = false;
-        }
-        else if (n === 2){
-            flag = true;
-        }
-        else if (n % 2 === 0){
-            flag = false;
-        }
-        else{
-            for (let i = 3; i < n-1; i+=2)
-            {
-                if (n % i === 0){
+        } else {
+            for (let i = 3; i < n; i += 2) {
+                if (n % i === 0) {
                     flag = false;
                     break;
                 }
             }
         }
-        if (flag === true){
+        if (flag === true) {
             document.write(n + " là số nguyên tố <br/>");
-        } else {
-            document.write(n + " không phải là số nguyên tố <br/>");
+            count = count + 1;
         }
-        count = count + 1;
+        n++
     }
 </script>
 </body>

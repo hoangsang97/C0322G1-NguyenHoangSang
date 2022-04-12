@@ -22,27 +22,24 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
 <button onclick="clickMe()">Chơi</button>
 </body>
 <script>
-  function clickMe() {
-    let input = parseInt(prompt('Nhập một khoảng muốn đoán: '));
-    while (input !== 70) {
-      if (input >= 71) {
-        input = parseInt(prompt('Hãy nhập số nhỏ 100:'));
-        if (input === true) {
-          document.write('chúc mừng bạn đã đoán trúng: ' + input);
-          break;
+    function clickMe() {
+        let result = Math.floor(Math.random() * 10);
+        let i = 0;
+        do {
+            let input = parseInt(prompt('Nhập số từ 1 -> 10: '));
+            if (input === result) {
+                alert('Chúc mừng bạn đã đoán trúng!');
+            } else if (input < result) {
+                alert('Số của bạn nhỏ hơn số bí mật: ');
+            } else {
+                alert('Số của bạn lớn hơn số bí mật: ');
+            }
+            i++;
+        } while (i < 3);
+        if (i === 3) {
+            alert('Bạn đã nhập quá 3 lần!');
         }
-      } else if (input <= 69) {
-        input = parseInt(prompt('Hãy nhập số lớn 50: '));
-        if (input === true) {
-          document.write('chúc mừng bạn đã đoán trúng: ' + input);
-          break;
-        }
-      } else {
-        document.write('chúc mừng bạn đã đoán trúng: ' + input);
-        break;
-      }
     }
-    document.write('chúc mừng bạn đã đoán trúng: ' + input);
-  }
+
 </script>
 </html>

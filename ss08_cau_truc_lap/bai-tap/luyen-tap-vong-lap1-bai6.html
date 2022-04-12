@@ -7,16 +7,15 @@
 <body>
 <script>
     //Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
-    let i = 1;
-    let total = 0;
-    let count = 0;
-    while (count <= 29) {
-         if(i % 7 === 0)
-         {
+    let i = 7;
+    let total = 7;
+    let count = 1;
+    while (count < 29) {
+         if(i % 7 === 0) {
              count += 1;
              total += i;
          }
-         i += 1;
+         i += 7;
     }
      document.write('total = ' + total);
 </script>
