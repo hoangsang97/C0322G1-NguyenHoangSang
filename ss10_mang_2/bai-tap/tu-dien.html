@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+  <input type="text" id="seach" placeholder="Nhập từ cần tìm">
+  <input type="submit" id="submit" value="Tìm" onclick="clickMe()">
+</form>
+</body>
+<script>
+    function clickMe() {
+        let dictionaryTa = ["hello", "how", "book", "computer"];
+        let dictionaryTv = ["xin chào", "thế nào", "quyển vở", "máy tính"];
+        let searchword = document.getElementById('seach').value;
+        let index = -1;
+        for (let i = 0; i < dictionaryTa.length; i++) {
+            if (searchword === dictionaryTa[i]) {
+                index = i;
+                document.write('Từ: ' + dictionaryTa[i] + '<br>' + 'Nghĩa của từ: ' + dictionaryTv[index])
+                index = 1;
+            }
+        }
+        if (index === -1) {
+            document.write('Không tìm thấy từ cần tra.')
+        }
+    }
+</script>
+</html>
