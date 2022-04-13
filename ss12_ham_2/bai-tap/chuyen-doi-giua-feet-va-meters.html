@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <p>
+        <label for="inputMet">Foot: </label>
+        <input type="number" id="inputMet" placeholder="meters" oninput="convertMeter(this.value)" onchange="convertMeter(this.value)">
+    </p>
+    <p>Meters: <span id="outputFoot"></span></p>
+    <p>
+        <label for="inputFoot">Meters: </label>
+        <input type="number" id="inputFoot" placeholder="meters" oninput="convertFoot(this.value)" onchange="convertFoot(this.value)">
+    </p>
+    <p>Foot: <span id="outputMeter"></span></p>
+</form>
+<script>
+    function convertMeter(valFoot) {
+        valFoot = parseFloat(valFoot);
+        document.getElementById('outputFoot').innerHTML = valFoot * 0.305;
+    }
+    function convertFoot(valMeter) {
+        valMeter = parseFloat(valMeter);
+        document.getElementById('outputMeter').innerHTML = valMeter * 3.279;
+    }
+</script>
+</body>
+</html>
