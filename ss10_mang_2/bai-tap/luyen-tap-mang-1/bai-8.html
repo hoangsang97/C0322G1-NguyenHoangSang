@@ -6,11 +6,27 @@
 </head>
 <body>
 <script>
-    //Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
-    let arrayA = [11, 5, 3, 12, 7, 20, 30, 40, 33, 4];
-    arrayA.sort(function (a,b) {
-        return b - a;
-    });
+    //Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    // Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    let arrayA = Array();
+    for (let j = 0; j < 10; j++) {
+        arrayA[j] = parseInt(prompt('Nhập 10 phần tử: '));
+    }
+    let first = 0;
+    let last = 1;
+    while (first < 10) {
+        for (let j = 0; j < arrayA.length; j++) {
+            while (arrayA[first] < arrayA[last]) {
+                let b = arrayA[first];
+                arrayA[first] = arrayA[last];
+                arrayA[last] = b;
+            }
+            last++;
+        }
+        last = first + 1;
+        first++;
+        last++;
+    }
     document.write(arrayA);
 </script>
 </body>

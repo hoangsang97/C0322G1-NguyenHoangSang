@@ -6,15 +6,23 @@
 </head>
 <body>
 <script>
-  //Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
-  let arrayA = [11, 5, 3, 12, 7, 20, 30, 40, 33, 4];
+  //Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+  // Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
+  // (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+  let arrayA = Array();
+  for (let j = 0; j < 10; j++) {
+      arrayA[j] = parseInt(prompt('Nhập 10 phần tử: '));
+  }
+
   let inputArray = parseInt(prompt('Nhập phần tử số nguyên V: '));
-  let first = 0;
   let flag = false;
+  let index;
   for (let  i = 0; i < arrayA.length; i++) {
       if (inputArray === arrayA[i]) {
-          arrayA[i] = arrayA[0];
-          arrayA.shift();
+          for (index = i; index < arrayA.length;index++) {
+              arrayA[index] = arrayA[index + 1];
+          }
+          arrayA[index - 1] = 0;
           document.write(arrayA);
           flag = true;
       }

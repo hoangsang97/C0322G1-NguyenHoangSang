@@ -9,10 +9,20 @@
   //Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
   let a = prompt('Nhập chuỗi thứ nhất: ');
   let b = prompt('Nhập chuỗi thứ hai: ');
-  if (a === b) {
-      document.write('hai chuỗi nhập giống nhau.');
+  let flag = true;
+  if (a.length !== b.length) {
+      document.write('2 chuỗi ko bằng nhau')
   } else {
-      document.write('hai chuỗi nhập không giống nhau.');
+      for (let i = 0; i < a.length; i++) {
+          if (a[i] !== b[i]) {
+              document.write('2 chuỗi ko bằng nhau');
+              flag = false;
+              break
+          }
+      }
+      if (flag === true) {
+          document.write('2 chuổi bằng nhau')
+      }
   }
 </script>
 </body>

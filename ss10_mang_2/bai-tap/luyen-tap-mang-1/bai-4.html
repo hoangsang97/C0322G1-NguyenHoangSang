@@ -7,7 +7,10 @@
 <body>
 <script>
     //Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
-    let arrayA = [11, 5, 3, 12, 7, 20, 30, 40, 33, 4];
+    let arrayA = Array();
+    for (let j = 0; j < 10; j++) {
+        arrayA[j] = parseInt(prompt('Nhập 10 phần tử: '));
+    }
     let first = 0;
     let last = arrayA.length - 1;
     while (first < last) {
