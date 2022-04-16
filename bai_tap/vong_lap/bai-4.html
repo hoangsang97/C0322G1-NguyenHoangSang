@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //4. Viết chương trình nhập vào 1 mảng các số nguyên. Đếm số lần xuất hiện của các phần tử trong mảng đó. Ví dụ:
+    //[ 1,2,3,3,2,4] => 1 : 1 lần , 2 : 2 lần, 3: 2 lần, 4: 1 lần.
+    let inputArray = Array();
+    for (let n = 0; n <= 5; n++){
+        inputArray[n] = parseInt(prompt("Nhập vào 5 số nguyên bất kì: "));
+    }
+    let count = 1;
+    for (let i = 0; i < inputArray.length; i++) {
+        let j = i + 1;
+        if (inputArray[i] !== inputArray[i - 1] && inputArray[i] !== inputArray[i - 3]) {
+            for (j; j < inputArray.length; j++) {
+                if (inputArray[i] === inputArray[j]) {
+                    count++;
+                }
+            }
+            document.write(inputArray[i] + " : " + count + " lần" + "<br>");
+            count = 1;
+        }
+    }
+</script>
+</body>
+</html>

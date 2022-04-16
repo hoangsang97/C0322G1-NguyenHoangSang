@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //3. Viết chương trình cho người dùng nhập vào 1 số nguyên bất kì. Hiển thị các số KHÔNG phải số nguyên tố từ 0 đến số người dùng nhập vào.
+    let inputN = parseInt(prompt("Nhập vào một số nguyên bất kì: "));
+    let flag = true;
+    let count = 0;
+    while (count <= inputN) {
+        flag = true;
+        if (count <= 1) {
+            flag = false;
+        } else {
+            for (let i = 4; i <= count; i++) {
+                if (count % 2 === 0) {
+                    flag = false;
+                }
+            }
+        }
+        if (flag === false) {
+            document.write(count + " Không phải là số nguyên tố" + "<br>");
+        }
+        count++;
+    }
+</script>
+</body>
+</html>

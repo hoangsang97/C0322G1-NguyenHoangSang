@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //6. Viết chương trình nhập vào 1 mảng số nguyên. Nếu 2 phần tử liền nhau trong mảng có tổng = 20 thì thay thế vị trí của 2 phần tử đó = tổng của nó. Ví dụ [ 1, 7, 13 , 6] => [1, 20, 20 ,6].
+  let array = Array();
+  for (let j = 0; j < 5; j++) {
+      array[j] = parseInt(prompt("Nhập vào mảng 5 phần tử số nguyên: "));
+  }
+  for (let  i = 0; i < array.length; i++) {
+      if ((array[i] + array[i + 1]) === 20){
+          array[i] = 20;
+          array[i + 1] = 20;
+      }
+  }
+  document.write(array);
+</script>
+</body>
+</html>
