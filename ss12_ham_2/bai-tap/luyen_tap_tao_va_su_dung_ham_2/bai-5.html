@@ -8,18 +8,24 @@
 <script>
     //Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
     function integerSmall() {
-        let inputInt1 = parseInt(prompt("Nhập vào số nguyên bất kì"));
-        let inputInt2 = parseInt(prompt("Nhập vào số nguyên bất kì"));
-        let inputInt3 = parseInt(prompt("Nhập vào số nguyên bất kì"));
-        if (inputInt1 < inputInt2 && inputInt1 < inputInt3) {
-            document.write(inputInt1);
-        } else if (inputInt2 < inputInt1 && inputInt2 < inputInt3) {
-            document.write(inputInt2);
-        } else {
-            document.write(inputInt3);
+
+        let inputInt = Array();
+        for (let j = 0; j < 3; j++) {
+            inputInt[j] = parseInt(prompt('Nhập 3 phần tử: '));
         }
 
+        let min = inputInt[0];
+        let minIndex = 0;
+        for (let i = 1; i < inputInt.length; i++) {
+            if (min > inputInt[i]) {
+                min = inputInt[i];
+                minIndex = i;
+            }
+        }
+        return (min);
     }
+
+    document.write(integerSmall());
 </script>
 </body>
 </html>
