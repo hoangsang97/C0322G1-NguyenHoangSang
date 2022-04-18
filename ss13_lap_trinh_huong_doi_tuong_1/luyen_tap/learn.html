@@ -6,19 +6,40 @@
 </head>
 <body>
 <script>
-  let person = {
-    name: ['Bob', 'Smith'],
-    age: 32,
-    gender: 'male',
-    interest: ['music', 'skiing'],
-    bio: function () {
-      alert((this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' year old. He like ' + this.interest[0] + ' and ' + this.interest[1] + '.'));
-    },
-    greeting: function () {
-      alert('Hi I am ' + this.name[0] + '.');
-    }
+  // let person = {
+  //   name: ['Bob', 'Smith'],
+  //   age: 32,
+  //   gender: 'male',
+  //   interest: ['music', 'skiing'],
+  //   bio: function () {
+  //     alert((this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' year old. He like ' + this.interest[0] + ' and ' + this.interest[1] + '.'));
+  //   },
+  //   greeting: function () {
+  //     alert('Hi I am ' + this.name[0] + '.');
+  //   }
+  // }
+  // person.greeting();
+
+  // function Student(id ,name, address) {
+  //     this.id = id;
+  //     this.name = name;
+  //     this.address = address;
+  //     this.getInfor = function () {
+  //         return "Id " + this.id + " name " + this.name + " address " + this.address;
+  //     }
+  // }
+  // let student = new Student(1 , "nguyen van a", "que son");
+  // document.write(student.getInfor());
+
+  let Student = {
+      id: 1,
+      name: "nguyen van a",
+      address: "que son",
+      getInfor: function () {
+          return "Id " + this.id + " name " + this.name + " address " + this.address;
+      }
   }
-  person.greeting();
+  document.write(Student.getInfor());
 </script>
 </body>
 </html>

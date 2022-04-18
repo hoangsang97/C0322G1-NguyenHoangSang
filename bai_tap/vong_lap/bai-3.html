@@ -15,8 +15,8 @@
         if (count <= 1) {
             flag = false;
         } else {
-            for (let i = 4; i <= count; i++) {
-                if (count % 2 === 0) {
+            for (let i = 2; i < count; i++) {
+                if (count % i === 0) {
                     flag = false;
                 }
             }

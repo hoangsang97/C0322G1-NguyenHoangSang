@@ -6,25 +6,26 @@
 </head>
 <body>
 <script>
-    //5.Viết chương trình hiển thị các số nhỏ hơn 10000 và các số đó thỏa mãn 2 yêu cầu: thứ nhất số đó thuộc dãy fibonacci , thứ 2 số đó phải là số nguyên tố.
+    //5.Viết chương trình hiển thị các số nhỏ hơn 10000 và các số đó thỏa mãn 2 yêu cầu:
+    // thứ nhất số đó thuộc dãy fibonacci , thứ 2 số đó phải là số nguyên tố.
     const number = 10000;
     let n1 = 0;
     let n2 = 1;
     let nextTerm = 0;
     let flag = true;
-    document.write("2" + "<br>");
     while (nextTerm < number) {
         nextTerm = n1 + n2;
         n1 = n2;
         n2 = nextTerm;
 
-        flag = true;
+        flag = true
         if (nextTerm <=1) {
             flag = false;
         } else {
-            for (let j = 3; j < number; j++) {
-                if (nextTerm % 2 === 0) {
+            for (let j = 3; j < nextTerm; j++) {
+                if (nextTerm % j === 0) {
                     flag = false;
+                    break;
                 }
             }
         }
