@@ -7,50 +7,70 @@
 <body>
 <script>
     class Apple {
-        constructor(weight) {
-            this.weight = weight;
+        constructor(piece) {
+            this.piece = piece;
         }
-        // setPiece = function () {
-        //     this.
-        // }
-        getWeight = function () {
-            return this.weight = 10;
+
+        setPiece = function (piece) {
+            this.piece = piece;
+        }
+        getPiece = function () {
+            return this.piece;
         }
         decrease = function () {
-            if (this.weight > 0) {
-                this.weight--;
+            if (this.piece > 0) {
+                this.piece--;
+            } else {
+                return this.piece = 0;
             }
         }
     }
 
     class Human {
-        constructor(name, gender, weight) {
+        constructor(name, gender, weight, say) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
+            this.say = say;
         }
-        setGender = function (gender) {
-            this.gender = 'Nam';
-        }
-        checkApple = function () {
 
+        getWeight = function () {
+            return this.weight;
         }
-        eat = function () {
-
+        setApple = function (apple) {
+            this.apple = apple;
         }
-        say = function () {
-
+        getApple = function () {
+            return this.apple.getPiece();
         }
-        getName = function () {
-
+        biteShot = function () {
+            if (this.status) {
+                this.weight++;
+                document.write(this.name + this.say + "<br>");
+            }
         }
-        setName = function () {
-
+        oneShot = function () {
+            this.status = true;
+            return this.apple.decrease();
         }
     }
 
-    let apple = new Apple(20);
-    document.write(apple.getWeight());
+    var adam = new Human("Adam ", "Male", 50, 'say "my turn: "');
+    var eva = new Human("Eva ", "Femal", 45, 'say "give me: "');
+    var apple = new Apple();
+    apple.setPiece(10);
+    adam.setApple(apple);
+    eva.setApple(apple);
+
+    for (let i = 0; i < 5; i++) {
+        eva.oneShot();
+        eva.biteShot();
+        document.write("weight of eva: " + eva.getWeight() + "." + " The remain of the apple: " + eva.getApple() + "<br>");
+        adam.oneShot();
+        adam.biteShot();
+        document.write("weight of eva: " + adam.getWeight() + "." + " The remain of the apple: " + adam.getApple() + "<br>");
+    }
+    ;
 </script>
 </body>
 </html>
