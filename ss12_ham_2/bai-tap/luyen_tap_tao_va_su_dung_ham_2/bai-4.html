@@ -6,19 +6,18 @@
 </head>
 <body>
 <script>
-  //Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
-  // Nếu là ký tự số hàm trả về true, ngược lại trả về false.
-  let inputTxt = prompt("Nhập: ");
+    //Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+    // Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+    let input = prompt("Nhập: ");
+    document.write(checkInput(input));
 
-  function checkInput() {
-      let flag = false;
-      if (inputTxt % 1 === 0) {
-          flag = true;
-      }
-      return (flag);
-  }
-
-  document.write(checkInput());
+    function checkInput(inputTxt) {
+        let flag = false;
+        if (!isNaN(inputTxt)) {
+            flag = true;
+        }
+        return (flag);
+    }
 </script>
 </body>
 </html>

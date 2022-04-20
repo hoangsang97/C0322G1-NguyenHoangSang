@@ -7,10 +7,11 @@
 <body>
 <script>
   //Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
-  let inputA = parseInt(prompt('Nhập số nguyên thứ nhất: '));
-  let inputB = parseInt(prompt('Nhập số nguyên thứ hai: '));
+  let input1 = parseInt(prompt('Nhập số nguyên thứ nhất: '));
+  let input2 = parseInt(prompt('Nhập số nguyên thứ hai: '));
+  document.write(convertInt(input1, input2))
 
-  function convertInt() {
+  function convertInt(inputA, inputB) {
       let b = inputA;
       inputA = inputB;
       inputB = b;
@@ -18,7 +19,7 @@
       return (inputA + ',' + inputB);
   }
 
-  document.write(convertInt())
+
 </script>
 </body>
 </html>

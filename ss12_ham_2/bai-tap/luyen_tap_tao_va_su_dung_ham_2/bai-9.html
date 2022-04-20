@@ -6,36 +6,35 @@
 </head>
 <body>
 <script>
-  //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
-  // kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
-  // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
-  let arrayA = Array();
-  for (let j = 0; j < 5; j++) {
-    arrayA[j] = prompt('Nhập vào mảng 5 kí tự bất kì: ');
-  }
-  let inputInt = prompt('Nhập vào một kí tự để tìm kiếm trong mảng: ');
-
-  function checkInt() {
-    let count = 0;
-    let flag = false;
-    let result;
-    for (let i = 0; i < arrayA.length; i++) {
-      if (inputInt === arrayA[i]) {
-        flag = true;
-        count++;
-      }
+    //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+    // kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    let array = Array();
+    for (let j = 0; j < 5; j++) {
+        array[j] = prompt('Nhập vào mảng 5 kí tự bất kì: ');
     }
+    let input = prompt('Nhập vào một kí tự để tìm kiếm trong mảng: ');
+    document.write(checkInt(array, input))
 
-    if (flag === true) {
-      result = 'Số lần xuất hiện là: ' + count;
-    } else {
-      result = 'Không tìm thấy giá trị: -1';
+    function checkInt(arrayA, inputInt) {
+        let count = 0;
+        let flag = false;
+        let result;
+        for (let i = 0; i < arrayA.length; i++) {
+            if (inputInt === arrayA[i]) {
+                flag = true;
+                count++;
+            }
+        }
+
+        if (flag === true) {
+            result = 'Số lần xuất hiện là: ' + count;
+        } else {
+            result = 'Không tìm thấy giá trị: -1';
+        }
+
+        return result;
     }
-
-    return (result);
-  }
-
-  document.write(checkInt())
 </script>
 </body>
 </html>

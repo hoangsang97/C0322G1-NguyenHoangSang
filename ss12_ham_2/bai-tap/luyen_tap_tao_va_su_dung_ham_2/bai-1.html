@@ -8,11 +8,12 @@
 <script>
     //Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
     let inputSquare = parseInt(prompt("Nhập vào một số bất kì: "));
-    function square() {
-       let result = Math.pow(inputSquare, 2);
-       return(result);
+    document.write(square(inputSquare));
+
+    function square(result) {
+       result = Math.pow(inputSquare, 2);
+       return result;
     }
-    document.write(square());
 </script>
 </body>
 </html>

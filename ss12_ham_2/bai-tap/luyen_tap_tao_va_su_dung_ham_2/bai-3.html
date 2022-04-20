@@ -7,15 +7,16 @@
 <body>
 <script>
     //Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được
-    let inputFactorial = parseInt(prompt("Nhập vào số nguyên bất kì: "));
-    function factorial() {
+    let input = parseInt(prompt("Nhập vào số nguyên bất kì: "));
+    document.write(factorial(input));
+
+    function factorial(inputFactorial) {
         let result = 1;
         for (let i = 1; i <= inputFactorial; i++) {
             result = result * i;
         }
-        return(result);
+        return (result);
     }
-    document.write(factorial());
 </script>
 </body>
 </html>

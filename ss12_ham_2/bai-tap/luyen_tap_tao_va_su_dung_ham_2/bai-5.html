@@ -7,13 +7,13 @@
 <body>
 <script>
     //Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
-    function integerSmall() {
+    let input = Array();
+    for (let j = 0; j < 3; j++) {
+        input[j] = parseInt(prompt('Nhập 3 phần tử: '));
+    }
+    document.write(integerSmall(input));
 
-        let inputInt = Array();
-        for (let j = 0; j < 3; j++) {
-            inputInt[j] = parseInt(prompt('Nhập 3 phần tử: '));
-        }
-
+    function integerSmall(inputInt) {
         let min = inputInt[0];
         let minIndex = 0;
         for (let i = 1; i < inputInt.length; i++) {
@@ -25,7 +25,7 @@
         return (min);
     }
 
-    document.write(integerSmall());
+
 </script>
 </body>
 </html>

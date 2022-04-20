@@ -8,16 +8,16 @@
 <script>
     //Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
     // Nếu là nguyên dương trả về true, ngược lại trả về false.
-    function checkInt() {
-        let inputInt = parseInt(prompt('Nhập một số nguyên bất kì: '));
+    let input = parseInt(prompt('Nhập một số nguyên bất kì: '));
+    document.write(checkInt(input));
+
+    function checkInt(inputInt) {
         let flag = false;
         if (inputInt > 0) {
             flag = true;
         }
         return (flag);
     }
-
-    document.write(checkInt());
 </script>
 </body>
 </html>

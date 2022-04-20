@@ -14,17 +14,17 @@
     // Trong phần <body> của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao, sau đó gọi hàm với thông tin đầu vào.
     // Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. Cho kết quả hiển thị trên màn hình.
 
-    let starA = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
-    let starB = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
-    let InputStar = prompt('Nhập vào tên của ngôi sao: ');
-    parametersStar(InputStar);
+    starA = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    starB = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let display = prompt('Nhập vào tên của ngôi sao: ');
+    parametersStar(starA, starB, display);
 
-    function parametersStar(InputStar) {
+    function parametersStar(starA,starB,inputStar) {
         let index;
         let flag = false;
         for (let i = 0; i < starA.length; i++) {
             index = i;
-            if (InputStar === starA[i]) {
+            if (inputStar === starA[i]) {
                 starA[i] = starB[index];
                 flag = true;
                 break;

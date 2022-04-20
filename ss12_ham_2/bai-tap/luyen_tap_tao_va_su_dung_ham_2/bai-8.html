@@ -6,25 +6,25 @@
 </head>
 <body>
 <script>
-  //Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
-  let arrayA = Array();
-  for (let i = 0; i < 5; i++) {
-    arrayA[i] = parseInt(prompt('Nhập vào 5 số nguyên bất kì: '));
-  }
-
-  function checkInt() {
-    let first = 0;
-    let last = arrayA.length - 1;
-    while (first < last) {
-      let b = arrayA[first];
-      arrayA[first] = arrayA[last];
-      arrayA[last] = b;
-      first++;
-      last--;
+    //Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    let array = Array();
+    for (let i = 0; i < 5; i++) {
+        array[i] = parseInt(prompt('Nhập vào 5 số nguyên bất kì: '));
     }
-    return(arrayA);
-  }
-  document.write(checkInt());
+    document.write(checkInt(array));
+
+    function checkInt(arrayA) {
+        let first = 0;
+        let last = arrayA.length - 1;
+        while (first < last) {
+            let b = arrayA[first];
+            arrayA[first] = arrayA[last];
+            arrayA[last] = b;
+            first++;
+            last--;
+        }
+        return (arrayA);
+    }
 </script>
 </body>
 </html>
