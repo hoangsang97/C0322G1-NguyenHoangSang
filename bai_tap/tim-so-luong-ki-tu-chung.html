@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = "aabccbbaaa";
+    let s2 = "adccaabdb";
+    let count = -1;
+    let total = 0;
+    for (let i = 0; i < s1.length; i++) {
+        for (let j = 0; j < s2.length; j++) {
+            if (s1[i] === s2[j] && s1[i + 1] === s1[i]) {
+                count++;
+            }
+        }
+        total = total + count;
+        if (count >= 1) {
+            document.write(s1[i] + ' : ' + count + '<br>');
+        }
+        count = 0;
+    }
+    document.write('Số kí tự chung là: ' + total);
+</script>
+</body>
+</html>

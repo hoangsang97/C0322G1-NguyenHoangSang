@@ -5,23 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script>
-
-  function Rectangle(lengthRec, widthRec) {
-    this.lengthRec = lengthRec;
-    this.widthRec = widthRec;
-    this.acreageRec = function () {
-      return this.lengthRec * this.widthRec;
-    }
-    this.circuitRec = function () {
-      return (this.lengthRec + this.widthRec) * 2;
-    }
+  class Rectangle {
+      constructor(lengthRec, widthRec) {
+          this.lengthRec = lengthRec;
+          this.widthRec = widthRec;
+      }
+      acreageRec = function () {
+          return this.lengthRec * this.widthRec;
+      }
+      circuitRec = function () {
+          return (this.lengthRec + this.widthRec) * 2;
+      }
   }
 
   let rectangle = new Rectangle(4,5);
-  document.write(rectangle.acreageRec())
-  createCircle();
+  document.write('Diện tích hình chữ nhật là : ' + rectangle.acreageRec() + '<br>')
+  document.write('Chu vi hình chữ nhật là : ' + rectangle.circuitRec())
 </script>
 </body>
 </html>

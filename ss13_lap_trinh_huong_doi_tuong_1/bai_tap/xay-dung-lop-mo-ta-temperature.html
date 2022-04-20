@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let C = parseInt(prompt('Nhập độ C: '));
+    // let F = C * (9/5) + 32;
+    // alert(F);
+
+    class Temperature {
+        constructor(c) {
+            this.c = c;
+        }
+        f = function () {
+            return this.c * (9 / 5) + 32;
+        }
+    }
+
+    let inputC = new Temperature(25);
+    document.write(inputC.f());
+</script>
+</body>
+</html>

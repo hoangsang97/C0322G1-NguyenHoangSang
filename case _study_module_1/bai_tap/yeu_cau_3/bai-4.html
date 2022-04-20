@@ -8,20 +8,13 @@
 <script>
     // Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ
     // 1234, kết quả in ra màn hình là một hai ba bốn.
-    let inputTxt = ['1234'];
-    document.write(inputTxt.length);
-    let number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let word = ['một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
-    alert(numberWord(number, word, inputTxt));
-
-    function numberWord(number, word, inputTxt) {
-        for (let j = 0; j < inputTxt.length; j++) {
-            for (let i = 0; i < number.length; i++) {
-                if (inputTxt[j] === number[i]) {
-                    return word[i];
-                }
-            }
-        }
+    let inputTxt = prompt('Nhap so: ');
+    let number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    let word = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+    let index;
+    for (let i = 0; i < inputTxt.length; i++) {
+      index = number.indexOf(inputTxt[i]);
+      document.write(word[index] + ', ');
     }
 </script>
 </body>
