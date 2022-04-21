@@ -11,66 +11,67 @@
             this.piece = piece;
         }
 
-        setPiece = function (piece) {
+        setPiece(piece) {
             this.piece = piece;
         }
-        getPiece = function () {
+
+        getPiece() {
             return this.piece;
         }
-        decrease = function () {
-            if (this.piece > 0) {
-                this.piece--;
-            } else {
-                return this.piece = 0;
-            }
+
+        decrease() {
+            this.piece--;
         }
+
     }
 
     class Human {
-        constructor(name, gender, weight, say) {
+        constructor(name, gender, weight) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
-            this.say = say;
         }
 
-        getWeight = function () {
+        getWeight() {
             return this.weight;
         }
-        setApple = function (apple) {
+
+        setApple(apple) {
             this.apple = apple;
         }
-        getApple = function () {
-            return this.apple.getPiece();
-        }
-        biteShot = function () {
-            if (this.status) {
+
+        biteShot() {
+            if (this.apple.getPiece()) {
                 this.weight++;
-                document.write(this.name + this.say + "<br>");
+                this.apple.decrease();
+            } else {
+                document.write(" hết rồi ");
             }
         }
-        oneShot = function () {
-            this.status = true;
-            return this.apple.decrease();
+
+        saySomething(value) {
+            return value;
         }
     }
 
-    var adam = new Human("Adam ", "Male", 50, 'say "my turn: "');
-    var eva = new Human("Eva ", "Femal", 45, 'say "give me: "');
-    var apple = new Apple();
+    let adam = new Human("Adam ", "Male", 50);
+    let eva = new Human("Eva ", "Female", 45);
+    let apple = new Apple();
     apple.setPiece(10);
     adam.setApple(apple);
     eva.setApple(apple);
 
-    for (let i = 0; i < 5; i++) {
-        eva.oneShot();
-        eva.biteShot();
-        document.write("weight of eva: " + eva.getWeight() + "." + " The remain of the apple: " + eva.getApple() + "<br>");
-        adam.oneShot();
+    for (let i = 0; i < 6; i++) {
+        document.write("Adam nói: " + adam.saySomething("Anh ăn trước "));
         adam.biteShot();
-        document.write("weight of eva: " + adam.getWeight() + "." + " The remain of the apple: " + adam.getApple() + "<br>");
+        document.write("Trọng lượng táo còn: " + apple.getPiece());
+        document.write(" Số cân nặng bây giờ: " + adam.getWeight() + "<br>");
+        document.write("Eva nói: " + eva.saySomething("Đến lượt em: "));
+        eva.biteShot();
+        document.write("Trọng lượng táo còn: " + apple.getPiece());
+        document.write(" Số cân nặng bây giờ: " + eva.getWeight() + "<br>");
     }
-    ;
+
 </script>
 </body>
 </html>

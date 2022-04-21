@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="ON/OFF" onclick="clickMe(switchButt)">
+<script>
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+        getStatus() {
+            return this.status;
+        }
+        turnOn() {
+            this.status = true;
+            console.log("Công tắt điện bật, ");
+        }
+
+        turnOff() {
+            this.status = false;
+            console.log("Công tắt điện tắt, ");
+        }
+    }
+
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+            this.lamp = lamp;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        connectLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        switchOff() {
+            this.lamp.turnOff()
+        }
+
+        switchOn() {
+            this.lamp.turnOn();
+        }
+    }
+
+    let lamp = new ElectricLamp();
+    let switchButt = new SwitchButton();
+
+    switchButt.connectLamp(lamp);
+
+    function clickMe(obj) {
+        if (obj.getStatus()) {
+            obj.switchOn();
+            obj.setStatus(false);
+        } else {
+            obj.switchOff();
+            obj.setStatus(true);
+        }
+    }
+
+    clickMe(switchButt);
+</script>
+</body>
+</html>
