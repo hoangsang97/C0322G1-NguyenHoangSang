@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+    let m = 3;
+    let n = 3;
+    let arrA = [];
+    let sout = '<table border="1">';
+    for (let i = 0; i < m; i++) {
+        arrA[i] = [];
+        sout += '<tr>';
+        for (let j = 0; j < n; j++) {
+            arrA[i][j] = Math.floor(Math.random() * 10);
+            arrA.push(arrA[i][j]);
+            sout += '<td>' + arrA[i][j] + '</td>';
+        }
+        sout += '</tr>';
+    }
+    sout += '</table>';
+    document.write(sout + '<br>');
+
+    function minMax(arr) {
+        let max = arr[0][0];
+        let min = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 1; j < arr[i].length; j++) {
+                if (max < arr[i][j]) {
+                    max = arr[i][j];
+                } else if (min > arr[i][j]) {
+                    min = arr[i][j];
+                }
+            }
+        }
+        let resultMax = 'Phần tử lớn nhất trong mảng là: ' + max;
+        let resultMin = 'Phần tử nhỏ nhất trong mảng là: ' + min;
+        return resultMax + '<br>' + resultMin;
+    }
+
+    let result = minMax(arrA);
+    document.write(result);
+</script>
+</body>
+</html>

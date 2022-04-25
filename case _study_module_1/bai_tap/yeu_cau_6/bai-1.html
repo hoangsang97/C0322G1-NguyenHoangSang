@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Xổ số CodeGym</h1>
+<p id="display"></p>
+<button onclick="buy(value)"> Mua Vé</button>
+<button onclick="resultVietlot()"> Xem kết quả</button>
+<p id="displayResult"></p>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    table {
+        margin-bottom: 10px;
+    }
+    span {
+        padding: 0 20px;
+        border: 1px black solid;
+        border-radius: 3px;
+        width: 80px;
+    }
+</style>
+<script>
+    // Xây dựng ứng dụng cho phép khách hàng thực hiện mua vé số tương tự VIETLOT, mỗi
+    // vé sẽ bao gồm 6 số nguyên dương, có thể mua tối đa 4 vé.
+    // Viết chương trình cho phép người dùng mua vé số. Sẽ có hai tuỳ chọn cho khách hàng
+    // thực hiện chọn số trên mỗi vé.
+    // - Nếu khách hàng chọn tự nhập thì cứ mỗi ô tròn KH click vào sẽ hiển thị 1 bảng chọn số
+    // từ 0-99
+    // - Nếu khách hàng chọn tuỳ chọn random thì hệ thống sẽ tự động tạo ra 6 số tương ứng 6
+    // ô tròn
+    // Sau khi khách hàng hoàn tất việc chọn số trên vé thì nhấn hoàn tất để thực hiện quay số
+    // Hệ thống sẽ so khớp dãy số trên vé với dãy số của hệ thống xem KH có trúng thưởng
+    // không
+    // Sẽ có 3 giải bao gồm:
+    //         Giải nhất: 6 số trên vé của KH trùng khớp hoàn toàn với 6 số của hệ thống
+    // Giải nhì: 5 số cuối của vé KH trùng khớp với 5 số cuối của hệ thống
+    // Giải khuyến khích: 3 số cuối của vé KH trùng khớp với 3 số cuối của hệ thống
+    // Khi KH may mắn trúng giải nào thì hệ thống sẽ hiển thị kết quả là số tiền sẽ nhận được
+    // tương ứng (HV tự defined)
+    // Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “Chúc bạn may mắn lần
+    // sau”
+
+    class NumVietlot {
+        constructor(num1, num2, num3, num4, num5, num6) {
+            this._num1 = num1;
+            this._num2 = num2;
+            this._num3 = num3;
+            this._num4 = num4;
+            this._num5 = num5;
+            this._num6 = num6;
+        }
+
+        getNum1() {
+            return this._num1;
+        }
+
+        setNum1(value) {
+            this._num1 = value;
+        }
+
+        getNum2() {
+            return this._num2;
+        }
+
+        setNum2(value) {
+            this._num2 = value;
+        }
+
+        getNum3() {
+            return this._num3;
+        }
+
+        setNum3(value) {
+            this._num3 = value;
+        }
+
+        getNum4() {
+            return this._num4;
+        }
+
+        setNum4(value) {
+            this._num4 = value;
+        }
+
+        getNum5() {
+            return this._num5;
+        }
+
+        setNum5(value) {
+            this._num5 = value;
+        }
+
+        getNum6() {
+            return this._num6;
+        }
+
+        setNum6(value) {
+            this._num6 = value;
+        }
+    }
+
+    let vietlot = new NumVietlot(9, 6, 55, 44, 33, 33);
+    let arrVietlot = [];
+    arrVietlot.push(vietlot)
+
+    function display() {
+        let sout = '<table>';
+        for (let i = 0; i < arrVietlot.length; i++) {
+            sout += '<tr>' +
+                '<td>' + '<span>' + arrVietlot[i].getNum1() + '</span>' + '</td>' +
+                '<td>' + '<span>' + arrVietlot[i].getNum2() + '</span>' + '</td>' +
+                '<td>' + '<span>' + arrVietlot[i].getNum3() + '</span>' + '</td>' +
+                '<td>' + '<span>' + arrVietlot[i].getNum4() + '</span>' + '</td>' +
+                '<td>' + '<span>' + arrVietlot[i].getNum5() + '</span>' + '</td>' +
+                '<td>' + '<span>' + arrVietlot[i].getNum6() + '</span>' + '</td>' +
+                '</tr>';
+        }
+        sout += '</table>';
+        document.getElementById('display').innerHTML = sout;
+    }
+
+    display(arrVietlot);
+
+    function buy(value) {
+        let inputOption = prompt('Bạn có 2 lựa chọn: ' + '\n' + '1. Bạn muốn tự chọn số' + '\n' + '2. Hệ thống tự random');
+        let vietlot;
+        if (parseInt(inputOption) === 1) {
+            let number1 = parseInt(prompt('Nhập số thứ nhất (0-99): '));
+            let number2 = parseInt(prompt('Nhập số thứ hai (0-99): '));
+            let number3 = parseInt(prompt('Nhập số thứ ba (0-99): '));
+            let number4 = parseInt(prompt('Nhập số thứ bốn (0-99): '));
+            let number5 = parseInt(prompt('Nhập số thứ năm (0-99): '));
+            let number6 = parseInt(prompt('Nhập số thứ sáu (0-99): '));
+            vietlot = new NumVietlot(number1, number2, number3, number4, number5, number6);
+            arrVietlot.push(vietlot);
+            alert('Bạn đã chọn số thành công');
+            display(arrVietlot);
+        } else if (parseInt(inputOption) === 2) {
+            let number1 = Math.floor(Math.random() * 100);
+            let number2 = Math.floor(Math.random() * 100);
+            let number3 = Math.floor(Math.random() * 100);
+            let number4 = Math.floor(Math.random() * 100);
+            let number5 = Math.floor(Math.random() * 100);
+            let number6 = Math.floor(Math.random() * 100);
+            vietlot = new NumVietlot(number1, number2, number3, number4, number5, number6);
+            arrVietlot.push(vietlot);
+            alert('Bạn đã chọn số thành công');
+            display(arrVietlot);
+        } else {
+            alert('Bạn đã chọn số thất bại');
+        }
+    }
+    let newArr = [];
+    function resultVietlot(checkVietlot) {
+        let number1 = Math.floor(Math.random() * 100);
+        let number2 = Math.floor(Math.random() * 100);
+        let number3 = Math.floor(Math.random() * 100);
+        let number4 = Math.floor(Math.random() * 100);
+        let number5 = Math.floor(Math.random() * 100);
+        let number6 = Math.floor(Math.random() * 100);
+        checkVietlot = new NumVietlot(number1, number2, number3, number4, number5, number6);
+        newArr.push(checkVietlot);
+        let sout = '<table>';
+        for (let i = 0; i < arrVietlot.length; i++) {
+            sout += '<tr>' +
+                '<td>' + '<span>' + newArr[i].getNum1() + '</span>' + '</td>' +
+                '<td>' + '<span>' + newArr[i].getNum2() + '</span>' + '</td>' +
+                '<td>' + '<span>' + newArr[i].getNum3() + '</span>' + '</td>' +
+                '<td>' + '<span>' + newArr[i].getNum4() + '</span>' + '</td>' +
+                '<td>' + '<span>' + newArr[i].getNum5() + '</span>' + '</td>' +
+                '<td>' + '<span>' + newArr[i].getNum6() + '</span>' + '</td>' +
+                '</tr>';
+        }
+        sout += '</table>';
+        document.getElementById('displayResult').innerHTML = sout;
+    }
+
+    for (let i = 0; i < checkVietlot.length; i++) {
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có
+    // trong mảng đó.
+    let m = parseInt(prompt('Nhập số cột: '));
+    let n = parseInt(prompt('Nhập số hàng: '));
+    let arrA = [];
+    let sout = '<table border="1">';
+    for (let i = 0; i < m; i++) {
+        arrA[i] = [];
+        sout += '<tr>';
+        for (let j = 0; j < n; j++) {
+            arrA[i][j] = Math.floor(Math.random() * 10);
+            arrA.push(arrA[i][j]);
+            sout += '<td>' + arrA[i][j] + '</td>';
+        }
+        sout += '</tr>';
+    }
+    sout += '</table>';
+    document.write(sout + '<br>');
+
+    function prime(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            let flag = true;
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] <= 1) {
+                    flag = false;
+                } else if (arr[i][j] === 2 || arr[i][j] === 3) {
+                    flag = true;
+                } else if (arr[i][j] > 3 && arr[i][j] % 2 === 0) {
+                    flag = false;
+                } else {
+                    for (let i = 3; i < arr[i][j]; i += 2) {
+                        if (arr[i][j] % i === 0) {
+                            flag = false;
+                        }
+                    }
+                }
+
+                if (flag === true) {
+                    document.write(arr[i][j] + ' Là số nguyên tố' + '<br>');
+                    count++;
+                }
+            }
+        }
+        let increase = document.write('Tổng các số nguyên tố có trong hàm: ' + count);
+        return flag + increase;
+    }
+
+    let result = prime(arrA);
+    document.write(result);
+</script>
+</body>
+</html>

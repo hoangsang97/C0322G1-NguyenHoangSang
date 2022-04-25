@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<span id="result"></span><span>.đ</span>
 <table>
     <tr>
         <td>
@@ -16,12 +15,6 @@
         </td>
         <td>
             <button type="button" onclick="drinksBasic('3')">3</button>
-        </td>
-        <td>
-            <button type="button" onclick="drinksBasic('+')">+</button>
-        </td>
-        <td>
-            <button type="button" onclick="drinksBasic('7')">thanh toan</button>
         </td>
     </tr>
     <tr>
@@ -35,7 +28,7 @@
             <button type="button" onclick="drinksBasic('6')">6</button>
         </td>
         <td>
-            <button type="button" onclick="drinksBasic('delete')">xoa</button>
+            <button type="button" onclick="drinksBasic('7')">7</button>
         </td>
     </tr>
 </table>
@@ -46,6 +39,7 @@
     <li>nước ép cà chua</li>
     <li>nước lọc</li>
     <li>nước dừa</li>
+    <li>thoát gọi món</li>
 </ol>
 <script>
     // function payment () {
@@ -53,37 +47,38 @@
     //     result = result * ;
     // }
     function drinksBasic(x) {
-        let result = document.getElementById('result').innerText;
-        switch (x) {
-            case '1':
-                result = 15000 * parseInt(prompt('Giá cafe: 15000đ, hãy nhập số lượng muốn mua: '));
-                break;
-            case '2':
-                result = 25000 * parseInt(prompt('Giá cam vắt: 25000đ, hãy nhập số lượng muốn mua: '));
-                break;
-            case '3':
-                result = 35000 * parseInt(prompt('Giá nước ép cà rốt: 35000đ, hãy nhập số lượng muốn mua: '));
-                break;
-            case '4':
-                result = 35000 * parseInt(prompt('Giá nước ép cà chua: 35000đ, hãy nhập số lượng muốn mua: '));
-                break;
-            case '5':
-                result = 10000 * parseInt(prompt('Giá nước lọc: 10000đ, hãy nhập số lượng muốn mua: '));
-                break;
-            case '6':
-                result = 20000 * parseInt(prompt('Giá nước dừa: 20000đ, hãy nhập số lượng muốn mua: '));
-                break;
-            case '+' :
-                result = result + x;
-                break;
-            case 'delete':
-                result = '';
-                break;
-            case '7':
-                result = eval(result);
-                break;
-        }
-        document.getElementById('result').innerText = result;
+        let result;
+        do {
+            switch (x) {
+                case '1':
+                    result = 15000 * parseInt(prompt('Giá cafe: 15000đ, hãy nhập số lượng muốn mua: '));
+                    alert("Tổng số tiền bạn phải trả là: " + result)
+                    break;
+                case '2':
+                    result = 25000 * parseInt(prompt('Giá cam vắt: 25000đ, hãy nhập số lượng muốn mua: '));
+                    alert("Tổng số tiền bạn phải trả là: " + result)
+                    break;
+                case '3':
+                    result = 35000 * parseInt(prompt('Giá nước ép cà rốt: 35000đ, hãy nhập số lượng muốn mua: '));
+                    alert("Tổng số tiền bạn phải trả là: " + result)
+                    break;
+                case '4':
+                    result = 35000 * parseInt(prompt('Giá nước ép cà chua: 35000đ, hãy nhập số lượng muốn mua: '));
+                    alert("Tổng số tiền bạn phải trả là: " + result)
+                    break;
+                case '5':
+                    result = 10000 * parseInt(prompt('Giá nước lọc: 10000đ, hãy nhập số lượng muốn mua: '));
+                    alert("Tổng số tiền bạn phải trả là: " + result)
+                    break;
+                case '6':
+                    result = 20000 * parseInt(prompt('Giá nước dừa: 20000đ, hãy nhập số lượng muốn mua: '));
+                    alert("Tổng số tiền bạn phải trả là: " + result)
+                    break;
+                case '7':
+                    alert("Bạn đã thoát chương trình");
+                    break;
+            }
+        } while (x === '7');
     }
 
     // Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:

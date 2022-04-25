@@ -5,69 +5,82 @@
     <title>Title</title>
 </head>
 <body>
-<input type="button" value="ON/OFF" onclick="clickMe(switchButt)">
+<input type="button" value="ON/OFF" onclick="clickMe(lampButton)">
+<p id="display"></p>
 <script>
+    class Button {
+        constructor(lamp) {
+            this.lamp = lamp;
+            this.status = false;
+        }
+
+        setLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        getLamp() {
+            return this.lamp;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        connectLamp(electricLamp) {
+            this.electricLamp = electricLamp;
+        }
+
+        switchOff() {
+            this.status = true;
+            this.electricLamp.turnOff();
+        }
+
+        switchOn() {
+            this.status = false;
+            this.electricLamp.turnOn();
+        }
+
+        decrease() {
+            if (this.lamp > 0) {
+                this.lamp--;
+            } else {
+                alert('Đã hết lượt bật tắt');
+            }
+        }
+    }
+
     class ElectricLamp {
         constructor() {
             this.status = false;
         }
-        getStatus() {
-            return this.status;
-        }
-        turnOn() {
-            this.status = true;
-            console.log("Công tắt điện bật, ");
-        }
 
         turnOff() {
+            this.status = true;
+        }
+
+        turnOn() {
             this.status = false;
-            console.log("Công tắt điện tắt, ");
         }
     }
 
-    class SwitchButton {
-        constructor() {
-            this.status = false;
-            this.lamp = lamp;
-        }
+    let electricLamp = new ElectricLamp();
+    let lampButton = new Button(10);
 
-        setStatus(status) {
-            this.status = status;
-        }
-
-        getStatus() {
-            return this.status;
-        }
-
-        connectLamp(lamp) {
-            this.lamp = lamp;
-        }
-
-        switchOff() {
-            this.lamp.turnOff()
-        }
-
-        switchOn() {
-            this.lamp.turnOn();
-        }
-    }
-
-    let lamp = new ElectricLamp();
-    let switchButt = new SwitchButton();
-
-    switchButt.connectLamp(lamp);
+    lampButton.connectLamp(electricLamp);
 
     function clickMe(obj) {
         if (obj.getStatus()) {
             obj.switchOn();
-            obj.setStatus(false);
+            obj.decrease();
+            document.getElementById('display').innerHTML = ('Bóng đèn đang bật,' + ' Lượt bật/tắt còn ' + obj.getLamp() + '<br>');
         } else {
             obj.switchOff();
-            obj.setStatus(true);
+            obj.decrease();
+            document.getElementById('display').innerHTML = ('Bóng đèn đang tắt,' + ' Lượt bật/tắt còn ' + obj.getLamp() + '<br>');
         }
     }
 
-    clickMe(switchButt);
+    clickMe(lampButton);
 </script>
 </body>
 </html>

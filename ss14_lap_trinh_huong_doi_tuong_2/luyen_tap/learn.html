@@ -5,41 +5,117 @@
     <title>Title</title>
 </head>
 <body>
+<p><input type="button" value="On/Off" onclick="clickMe(lampButton)"></p>
+<p id="display"></p>
 <script>
-    class Apple {
-        constructor(piece) {
-            this.piece = piece;
+    // class Apple {
+    //     constructor(piece) {
+    //         this.piece = piece;
+    //     }
+    //
+    //     setPiece(piece) {
+    //         this.piece = piece;
+    //     }
+    //     getPiece() {
+    //         return this.piece;
+    //     }
+    // }
+    //
+    // class Human {
+    //     constructor(name, gender, weight) {
+    //         this.name = name;
+    //         this.gender = gender;
+    //         this.weight = weight;
+    //     }
+    //
+    //     getName = function () {
+    //         return this.name;
+    //     }
+    //     getSay = function () {
+    //         return this.say;
+    //     }
+    //
+    //     saySomething(value) {
+    //         return
+    //     }
+    //
+    // }
+    //
+    // let adam = new Human()
+
+    class Button {
+        constructor(lamp) {
+            this.lamp = lamp;
+            this.status = false;
         }
 
-        setPiece(piece) {
-            this.piece = piece;
+        setLamp(lamp) {
+            this.lamp = lamp;
         }
-        getPiece() {
-            return this.piece;
+
+        getLamp() {
+            return this.lamp;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        connectLamp(electricLamp) {
+            this.electricLamp = electricLamp;
+        }
+
+        switchOff() {
+            this.status = true;
+            this.electricLamp.turnOff();
+        }
+
+        switchOn() {
+            this.status = false;
+            this.electricLamp.turnOn();
+        }
+
+        decrease() {
+            if (this.lamp > 0) {
+                this.lamp--;
+            } else {
+                alert('Đã hết lượt bật tắt');
+            }
         }
     }
 
-    class Human {
-        constructor(name, gender, weight) {
-            this.name = name;
-            this.gender = gender;
-            this.weight = weight;
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
         }
 
-        getName = function () {
-            return this.name;
-        }
-        getSay = function () {
-            return this.say;
+        turnOff() {
+            this.status = true;
         }
 
-        saySomething(value) {
-            return
+        turnOn() {
+            this.status = false;
         }
-
     }
 
-    let adam = new Human()
+    let electricLamp = new ElectricLamp();
+    let lampButton = new Button(10);
+
+    lampButton.connectLamp(electricLamp);
+
+    function clickMe(obj) {
+        if (obj.getStatus()) {
+            obj.switchOn();
+            obj.decrease();
+            document.getElementById('display').innerHTML = ('Bóng đèn đang bật,' + ' Lượt bật/tắt còn ' + obj.getLamp() + '<br>');
+        } else {
+            obj.switchOff();
+            obj.decrease();
+            document.getElementById('display').innerHTML = ('Bóng đèn đang tắt,' + ' Lượt bật/tắt còn ' + obj.getLamp() + '<br>');
+        }
+    }
+
+    clickMe(lampButton);
 </script>
 </body>
 </html>

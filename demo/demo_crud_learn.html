@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Create" onclick="create()">
+<p id="display"></p>
+<script>
+    class Car {
+        constructor(name, color, product) {
+            this._name = name;
+            this._color = color;
+            this._product = product;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+        getColor() {
+            return this._color;
+        }
+
+        setColor(value) {
+            this._color = value;
+        }
+
+        getProduct() {
+            return this._product;
+        }
+
+        setProduct(value) {
+            this._product = value;
+        }
+    }
+
+    // let name = car.getName();
+    // let color = car.getColor();
+    // let product = car.getProduct();
+    let car1 = new Car("Suzuki", "black", "honda");
+    let car2 = new Car("Ymh", "yellow", "oto");
+    let arrCar = [];
+    arrCar.push(car1);
+    arrCar.push(car2);
+
+    function display() {
+        let sout = "<table border='1'>" +
+            "<tr>" +
+            "  <th>STT</th>" +
+            "  <th>Name</th>" +
+            "  <th>Color</th>" +
+            "  <th>Product</th>" +
+            "  <th>Update</th>" +
+            "  <th>Delete</th>" +
+            "</tr>";
+        for (let i = 0; i < arrCar.length; i++) {
+            sout += "<tr>" +
+                "<td>" + (i+1)+ "</td>" +
+                "<td>" + arrCar[i].getName() + "</td>" +
+                "<td>" + arrCar[i].getColor() + "</td>" +
+                "<td>" + arrCar[i].getProduct() + "</td>" +
+                "<td><button onclick='update(" + i + ")'>Update</button></td>" +
+                "<td><button onclick='remove(" + i + ")'>Delete</button></td>" +
+                "</tr>";
+        }
+        sout += "</table>";
+        document.getElementById("display").innerHTML = sout;
+    }
+    display(arrCar);
+
+    function create(newCar) {
+        let name = prompt('Nhập tên: ');
+        let color = prompt('Nhập màu: ');
+        let product = prompt('Nhập product: ');
+
+        newCar = new Car(name, color, product);
+        arrCar.push(newCar);
+        alert("thêm thông tin mới thành công");
+        display(arrCar);
+    }
+
+    function update(newCar) {
+        let name = prompt('Nhập tên: ');
+        let color = prompt('Nhập màu: ');
+        let product = prompt('Nhập product: ');
+
+        arrCar[newCar] = new Car(name, color, product);
+        alert('Sữa thông tin thành công');
+        display(arrCar);
+    }
+
+    function remove(newCar) {
+        arrCar.splice(newCar, 1);
+        display(arrCar);
+    }
+</script>
+</body>
+</html>
