@@ -11,9 +11,9 @@
 //   Ví dụ: numerators = [5, 2, 5] và denominators = [6, 3, 4], thì kết quả
 //   maxFraction(numerators, denominators) = 2.
 // ⇨ 5/4 là phân số lớn nhất, có chỉ số là 2.
-    let numerators = [5, 2, 5, 8];
-    let denominators = [6, 3, 4, 2];
-    let maxFraction = 0;
+    let numerators = [5, -8, 5, 8];
+    let denominators = [6, 2, 4, 6];
+    let maxFraction = numerators[0] / denominators[0];
     let index;
     for (let i = 0; i < numerators.length; i++) {
         if (maxFraction <= numerators[i] / denominators[i]) {

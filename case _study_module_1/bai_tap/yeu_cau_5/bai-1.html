@@ -8,14 +8,14 @@
 <script>
     // Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các
     // số nhập từ bàn phím.
-    let m = parseInt(prompt('Nhập số cột: '));
-    let n = parseInt(prompt('Nhập số hàng: '));
+    let inputM = parseInt(prompt('Nhập số cột: '));
+    let inputN = parseInt(prompt('Nhập số hàng: '));
     let arrA = [];
     let sout = '<table border="1">';
-    for (let i = 0; i < m; i++) {
+    for (let i = 0; i < inputM; i++) {
         arrA[i] = [];
         sout += '<tr>';
-        for (let j = 0; j < n; j++) {
+        for (let j = 0; j < inputN; j++) {
             arrA[i][j] = Math.floor(Math.random() * 10);
             arrA.push(arrA[i][j]);
             sout += '<td>' + arrA[i][j] + '</td>';

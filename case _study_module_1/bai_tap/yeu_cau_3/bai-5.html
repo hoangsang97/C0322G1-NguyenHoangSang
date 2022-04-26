@@ -42,43 +42,56 @@
     <li>thoát gọi món</li>
 </ol>
 <script>
-    // function payment () {
-    //     let result = document.getElementById('result').innerText;
-    //     result = result * ;
-    // }
+    let arrSum = [];
+
     function drinksBasic(x) {
         let result;
+        let sumDink = payment(arrSum);
         do {
             switch (x) {
                 case '1':
                     result = 15000 * parseInt(prompt('Giá cafe: 15000đ, hãy nhập số lượng muốn mua: '));
                     alert("Tổng số tiền bạn phải trả là: " + result)
+                    arrSum.push(result);
                     break;
                 case '2':
                     result = 25000 * parseInt(prompt('Giá cam vắt: 25000đ, hãy nhập số lượng muốn mua: '));
                     alert("Tổng số tiền bạn phải trả là: " + result)
+                    arrSum.push(result);
                     break;
                 case '3':
                     result = 35000 * parseInt(prompt('Giá nước ép cà rốt: 35000đ, hãy nhập số lượng muốn mua: '));
                     alert("Tổng số tiền bạn phải trả là: " + result)
+                    arrSum.push(result);
                     break;
                 case '4':
                     result = 35000 * parseInt(prompt('Giá nước ép cà chua: 35000đ, hãy nhập số lượng muốn mua: '));
                     alert("Tổng số tiền bạn phải trả là: " + result)
+                    arrSum.push(result);
                     break;
                 case '5':
                     result = 10000 * parseInt(prompt('Giá nước lọc: 10000đ, hãy nhập số lượng muốn mua: '));
                     alert("Tổng số tiền bạn phải trả là: " + result)
+                    arrSum.push(result);
                     break;
                 case '6':
                     result = 20000 * parseInt(prompt('Giá nước dừa: 20000đ, hãy nhập số lượng muốn mua: '));
                     alert("Tổng số tiền bạn phải trả là: " + result)
+                    arrSum.push(result);
                     break;
                 case '7':
-                    alert("Bạn đã thoát chương trình");
+                    alert("Bạn đã thoát chương trình " + '\n' + 'Tổng số tiền của bạn là: ' + sumDink );
                     break;
             }
         } while (x === '7');
+
+        function payment(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+            }
+            return sum;
+        }
     }
 
     // Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:

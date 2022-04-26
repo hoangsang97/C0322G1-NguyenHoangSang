@@ -9,7 +9,7 @@
     //   Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
     //   Ví dụ: s = &quot;cabca&quot;, thì kết quả differentSymbolsNaive(s) = 3.
     // ⇨ Có 3 kí tự khác nhau là a, b và c.
-    let stringA = "cabcascasczw";
+    let stringA = "cabcascasczwaaaacdasdaaaasadasdaaaabbbbbb";
     let arr = [];
 
     for (let i = 0; i < stringA.length; i++) {
@@ -20,6 +20,7 @@
         for (let j = i + 1; j < arr.length; j++) {
             if (arr[i] === arr[j]) {
                 arr.splice(j, 1);
+                j--;
             }
         }
     }
