@@ -10,11 +10,11 @@
     //   Ví dụ: s = &quot;cabca&quot;, thì kết quả differentSymbolsNaive(s) = 3.
     // ⇨ Có 3 kí tự khác nhau là a, b và c.
     let stringA = "cabcascasczwaaaacdasdaaaasadasdaaaabbbbbb";
-    let arr = [];
+    let arr = stringA.split('');
 
-    for (let i = 0; i < stringA.length; i++) {
-        arr.push(stringA[i]);
-    }
+    // for (let i = 0; i < stringA.length; i++) {
+    //     arr.push(stringA[i]);
+    // }
 
     for (let i = 0; i < arr.length; i++) {
         for (let j = i + 1; j < arr.length; j++) {

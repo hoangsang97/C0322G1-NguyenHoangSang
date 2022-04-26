@@ -11,6 +11,16 @@
 <button onclick="resultVietlot()" id="resultVietlot"> Xem kết quả</button>
 <p id="displayResult"></p>
 
+<div id="prize">
+    <hr>
+    <h3>Các giải trúng thưởng</h3>
+    <ol>
+        <li>giải đặc biệt 5 số trùng khớp 2 tỉ</li>
+        <li>giải nhất 4 số cuối trùng khớp 10 triệu</li>
+        <li>giải nhì 3 số cuối số trùng khớp 100 nghìn</li>
+    </ol>
+</div>
+
 <style>
     body {
         padding: 0;
@@ -26,10 +36,11 @@
     }
 
     span {
+        display: block;
         padding: 0 20px;
         border: 1px black solid;
         border-radius: 3px;
-        width: 80px;
+        width: 20px;
     }
 </style>
 
@@ -174,6 +185,7 @@
 
     let newArr = [];
 
+    document.getElementById("prize").style.display = "none";
     function resultVietlot(checkVietlot) {
         if (newArr.length < 1) {
             // let number1 = Math.floor(Math.random() * 100);
@@ -215,6 +227,8 @@
                     alert('chúc bạn may mắn lần sau');
                 }
             }
+
+            document.getElementById("prize").style.display = "block";
         }
     }
 

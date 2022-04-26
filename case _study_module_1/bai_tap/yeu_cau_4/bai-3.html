@@ -9,15 +9,17 @@
     //   Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
     //           Ví dụ: s1 = &quot;aabcc&quot; và s2 = &quot;adcaa&quot;, thì kết quả commonCharacterCount(s1, s2) = 3.
     // ⇨ 2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự &#39;a&#39; và 1 kí tự &#39;c&#39;.
-    let string1 = "aabccrdhjhgaaaaaabbbbbb";
-    let string2 = "adcaahgfyfaaaaaabbbbbb";
-    let arr1 = [];
-    let arr2 = [];
+    let string1 = "aabccrdhjhgaaaaaabbbbbáđâsddaa";
+    let string2 = "adcaahgfyfaaaaaabbbbbsađâs";
+    let arr1 = string1.split('');
+    let arr2 = string2.split('');
     let arr3 = [];
-    for (let i = 0; i < string1.length && string2.length; i++) {
-        arr1.push(string1[i]);
-        arr2.push(string2[i]);
-    }
+
+    //Không dùng hàm Split
+    // for (let i = 0; i < string1.length; i++) {
+    //     arr1.push(string1[i]);
+    //     arr2.push(string2[i]);
+    // }
 
     for (let i = 0; i < arr1.length; i++) {
         for (let j = 0; j < arr2.length; j++) {
