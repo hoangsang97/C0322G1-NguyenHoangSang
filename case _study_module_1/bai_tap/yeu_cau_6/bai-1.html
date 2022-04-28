@@ -7,7 +7,7 @@
 <body>
 <h1>Nhà cái Sang Nguyễn</h1>
 <p id="display"></p>
-<button onclick="buy(value)"> Mua Vé</button>
+<button onclick="buy()"> Mua Vé</button>
 <button onclick="resultVietlot()" id="resultVietlot"> Xem kết quả</button>
 <p id="displayResult"></p>
 
@@ -146,8 +146,9 @@
 
     document.getElementById('resultVietlot').style.display = 'none';
 
-    function buy(value) {
+    function buy() {
         document.getElementById('resultVietlot').style.display = 'inline';
+
         let inputOption = prompt('Bạn có 2 lựa chọn: ' + '\n' + '1. Bạn muốn tự chọn số' + '\n' + '2. Hệ thống tự random');
         let vietlot;
         if (arrVietlot.length < 4 && newArr.length === 0) {
@@ -186,7 +187,8 @@
     let newArr = [];
 
     document.getElementById("prize").style.display = "none";
-    function resultVietlot(checkVietlot) {
+
+    function resultVietlot() {
         if (newArr.length < 1) {
             // let number1 = Math.floor(Math.random() * 100);
             // let number2 = Math.floor(Math.random() * 100);
@@ -200,7 +202,7 @@
             let number4 = 44;
             let number5 = 33;
             let number6 = 33;
-            checkVietlot = new NumVietlot(number1, number2, number3, number4, number5, number6);
+            let checkVietlot = new NumVietlot(number1, number2, number3, number4, number5, number6);
             newArr.push(checkVietlot);
             let sout = '<table>';
             for (let i = 0; i < newArr.length; i++) {
